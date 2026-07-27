@@ -2,57 +2,33 @@
 #include <stdlib.h>
 int main()
 {
-	//to ask the user to enter the remaining amount
-	char input [50];
-	int remainingamount;
+	char input[50];
+	int height;
 	do
 	{
-		printf("Enter the remaining amount(in cents)\n");
+		printf("Enter the height(1-8)\n");
 		fgets(input, sizeof(input), stdin);
-		remainingamount = atoi(input);
-	}
-	while (remainingamount < 1);
-	int quarter = 25;
-	int dime = 10;
-	int nickel = 5;
-	int penny = 1;
-	int coins = 0;
-	if(remainingamount>=quarter)
-	{
-		coins = coins + (remainingamount / quarter);
-		remainingamount = remainingamount % quarter;
-
-	}
-	if (remainingamount>=dime)
-	{
-		coins = coins + (remainingamount /dime);
-		remainingamount = remainingamount % dime;
+		height = atoi(input);
 	} 
-	if(remainingamount>=nickel)3
+	while (height <= 0 || height > 8);
+	for (int lines = 1;lines<=height;lines++)
 	{
-		coins = coins + (remainingamount / nickel);
-		remainingamount = remainingamount % nickel;
+		for (int space = 1;space <= height-lines;space++)
+		{
+			printf(" ");
 	}
-	if (remainingamount>=penny)
-	{
-		coins = coins + (remainingamount / penny);
-		remainingamount = remainingamount % penny;
-	} 
-	printf("%i\n", coins);
+		for(int printedsymbol =1;printedsymbol<=lines;printedsymbol++)
+		{
+			printf("#");
+	}
+		printf("\n");
+		
 
-
-
-
-
-
-
-
-
-
-
-
+	}
 	
 
+
+
+
+
 }
-
-
